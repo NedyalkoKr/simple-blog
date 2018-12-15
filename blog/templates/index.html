@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    {% block content %}
+        {% for each_post in all_posts %}
+        <ul>
+            <li>{{ each_post }}</li>
+        </ul>
+        {% endfor %}
+
+        {% for each_post in all_posts_2018 %}
+        <ul>
+            <li>{{ each_post }}</li>
+        </ul>
+        {% endfor %}
+
+        {% for each_post in all_posts_2017 %}
+        <ul>
+            <li>{{ each_post }}</li>
+        </ul>
+        {% empty %}
+        <p>No posts</p>
+        {% endfor %}
+
+        {% for each_post in published_by_author %}
+        <ul>
+            <li>{{ each_post }}</li>
+        </ul>
+        {% endfor %}
+
+        {% for each_post in posts_excluded %}
+        <ul>
+            <li>{{ each_post }}</li>
+        </ul>
+        {% endfor %}
+
+        {% for each_post in ordered_posts %}
+        <ul>
+            <li>{{ each_post }}</li>
+        </ul>
+        {% endfor %}
+    {% endblock %}
+</body>
+</html>
